@@ -27,7 +27,7 @@ jobs:
         run: |
           git config --global user.name "cruft[bot]"
           git config --global user.email "cruft[bot]@users.noreply.github.com"
-          {{ `git config --global url."https://${{ secrets.CRUFT_GITHUB_ACCESS_TOKEN }}@github.com/".insteadOf "https://github.com/"`|raw }}
+          git config --global url."https://${{ "{{" }} secrets.CRUFT_GITHUB_ACCESS_TOKEN {{ "}}" }}@github.com/".insteadOf "https://github.com/"
 
           UPDATED=false
 
@@ -66,7 +66,7 @@ jobs:
         if: env.UPDATED == 'true' && env.PR_EXISTS == '0'
         uses: peter-evans/create-pull-request@v4
         with:
-          {{ `token: ${{ secrets.GITHUB_TOKEN }}`|raw }}
+          token: ${{ "{{" }} secrets.GITHUB_TOKEN {{ "}}" }}
           commit-message: "Update Cruft templates in subdirectories"
           branch: cruft/update
           delete-branch: true
