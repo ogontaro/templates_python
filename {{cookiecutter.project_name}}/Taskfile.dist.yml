@@ -1,0 +1,10 @@
+version: '3'
+
+includes:
+  poetry: 'tasks/poetry.tasks.yml'
+
+tasks:
+  default:
+    desc: show commands
+    cmds:
+      - task -l --sort none

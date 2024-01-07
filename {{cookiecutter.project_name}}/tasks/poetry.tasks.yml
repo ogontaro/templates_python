@@ -1,0 +1,8 @@
+version: '3'
+
+tasks:
+  init:
+    desc: poetry install
+    cmds:
+      - pyenv install
+      - poetry install
