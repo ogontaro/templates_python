@@ -2,6 +2,7 @@ version: '3'
 
 includes:
   poetry: 'tasks/poetry.tasks.yml'
+  cruft: 'tasks/cruft.tasks.yml'
 
 tasks:
   default:
