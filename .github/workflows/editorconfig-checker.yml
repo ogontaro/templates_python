@@ -7,7 +7,7 @@ on:
 
 jobs:
   editorconfig:
-    runs-on: [ templates-python-runners ]
+    runs-on: [ "ubuntu-latest" ]
 
     steps:
       - uses: actions/checkout@v4
